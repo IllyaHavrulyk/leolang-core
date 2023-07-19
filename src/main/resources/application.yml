@@ -2,8 +2,13 @@ translation-api:
   base_url: https://api-translate.systran.net/translation
   text_url: https://api-translate.systran.net/translation/text/translate
   profiles_url: https://api-translate.systran.net/translation/profiles
-  key: 59867adb-2683-4cd2-a482-d6b551259ce8
-
+  key: a3e8bfaf-32e2-4055-a68b-d5283805951d
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter.CommonsRequestLoggingFilter: DEBUG
 spring:
     jpa:
       hibernate:
