@@ -1,8 +1,8 @@
-translation-api:
+systran-api:
   base_url: https://api-translate.systran.net/translation
   text_url: https://api-translate.systran.net/translation/text/translate
-  profiles_url: https://api-translate.systran.net/translation/profiles
-  key: a3e8bfaf-32e2-4055-a68b-d5283805951d
+  profiles_url: https://api-translate.systran.net/profiles
+  key: 47c40bad-1ff4-4757-ba0e-1b14597fd2a3
 logging:
   level:
     org:

@@ -1,4 +1,4 @@
-package com.leolang.core.api.dto.systran.domain;
+package com.leolang.core.api.dto.systran.translate.text;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

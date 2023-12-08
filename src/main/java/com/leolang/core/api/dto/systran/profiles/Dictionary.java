@@ -1,4 +1,4 @@
-package com.leolang.core.api.dto.systran.domain;
+package com.leolang.core.api.dto.systran.profiles;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tech {
+public class Dictionary {
+    private String id;
     private String name;
-    private String type;
 }

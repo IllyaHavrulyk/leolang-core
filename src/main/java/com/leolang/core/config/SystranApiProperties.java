@@ -10,8 +10,8 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @Validated
-@ConfigurationProperties("translation-api")
-public class TranslationApiProperties {
+@ConfigurationProperties("systran-api")
+public class SystranApiProperties {
     @NotBlank
     private String baseUrl;
 
