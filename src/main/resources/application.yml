@@ -2,7 +2,7 @@ systran-api:
   base_url: https://api-translate.systran.net/translation
   text_url: https://api-translate.systran.net/translation/text/translate
   profiles_url: https://api-translate.systran.net/profiles
-  key: 47c40bad-1ff4-4757-ba0e-1b14597fd2a3
+  key: 5aa7c307-5ffb-440f-a89a-e96fefa85646
 logging:
   level:
     org:
