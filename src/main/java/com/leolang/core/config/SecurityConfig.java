@@ -2,8 +2,9 @@ package com.leolang.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
@@ -11,13 +12,15 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
 import java.util.List;
 
 @Configuration
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig  {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable(); // lesson 9 // focus on CORS
-        http.authorizeRequests()
-                .anyRequest().permitAll();
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(Customizer.withDefaults()); // lesson 9 // focus on CORS
+        http.authorizeHttpRequests(authz -> authz
+                .requestMatchers("/authentication/**").permitAll()
+                .requestMatchers("/h2/**").permitAll()
+                .anyRequest().authenticated());
 
         http.cors(c -> {
             CorsConfigurationSource cs = r -> {
@@ -30,6 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             c.configurationSource(cs);
         });
+
+        return http.build();
     }
 
     @Bean
